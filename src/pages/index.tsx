@@ -3,6 +3,7 @@ import type { HeadFC, PageProps } from "gatsby"
 import Layout from "../components/layout"
 import { StaticImage } from "gatsby-plugin-image"
 import Seo from '../components/seo'
+import PortfolioItems from '../components/portfolio-items'
 
 
 
@@ -16,6 +17,7 @@ const IndexPage: React.FC<PageProps> = () => {
         width={200}
         height={200}
       />
+      <PortfolioItems />
     </Layout>
   )
 }

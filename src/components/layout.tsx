@@ -17,7 +17,7 @@ const layoutStyles = {
 const Layout = ({ pageTitle, children }: LayoutProps) => (
   <StaticQuery
     query={graphql`
-      query SiteTitleQuery {
+      query SiteTitle {
         site {
           siteMetadata {
             title

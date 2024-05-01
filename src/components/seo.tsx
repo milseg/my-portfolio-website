@@ -1,14 +1,14 @@
 import * as React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 
-type LayoutProps = {
+type SeoProps = {
   pageTitle?: string;
 }
 
-const Seo = ({ pageTitle }: LayoutProps) => (
+const Seo = ({ pageTitle }: SeoProps) => (
   <StaticQuery
     query={graphql`
-      query SiteTitleQuery {
+      query {
         site {
           siteMetadata {
             title
