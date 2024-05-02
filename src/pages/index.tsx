@@ -16,9 +16,9 @@ const IndexPage: React.FC<PageProps> = () => {
       size: 'w-10 h-10'
     },
     {
-      href: 'https://www.tiktok.com/@milton.web3',
-      icon: 'tiktok.svg',
-      title: 'TikTok',
+      href: 'https://github.com/milseg?tab=repositories',
+      icon: 'github.svg',
+      title: 'Github',
       size: 'w-10 h-10'
     },
     {
@@ -43,11 +43,15 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <Layout>
       <div className="flex flex-col items-center md:flex-row md:items-center md:justify-start">
-        <img src="https://i.ibb.co/yWJZ2nM/profile-pic-green-trees.jpg" alt="Milton" className="rounded-full mb-4 md:mr-4" width="200" height="200" />
+        <StaticImage src="../images/profile-pic-green-trees.jpg" alt="Milton" className="rounded-full mb-4 md:mr-4 w-[200px] h-[200px]" />
         <div>
           <h1 className="text-4xl font-bold text-[#000] dark:text-zinc-300">Hey, I'm Milton.</h1>
           <p className="text-xl mb-6 dark:text-zinc-300">Full Stack Developer</p>
         </div>
+      </div>
+      <div className="flex flex-col justify-start gap-2 w-full" id="portfolio">
+        <h2 className="text-xs font-bold text-zinc-900 dark:text-white">My portfolio</h2>
+        <PortfolioItems />
       </div>
       <div className="flex flex-col justify-start gap-2 w-full">
         <h2 className="text-xs font-bold text-[#000] dark:text-white">Social Links</h2>
@@ -55,8 +59,8 @@ const IndexPage: React.FC<PageProps> = () => {
           <a href={sls[0].href} target="_blank" rel="noopener noreferrer" className="bg-[#9999ff] hover:bg-[#bbbbff] dark:bg-gray-400 dark:hover:bg-gray-200 dark:active:bg-gray-500 hover:cursor-pointer w-full aspect-square rounded-xl flex items-center justify-center shadow" title={`Milton's ${sls[0].title}`}>
             <StaticImage src={`../images/social-logos/linkedin.svg`} alt={`Milton's ${sls[0].title}`} className={sls[0].size} />
           </a>
-                    <a href={sls[1].href} target="_blank" rel="noopener noreferrer" className="bg-[#9999ff] hover:bg-[#bbbbff] dark:bg-gray-400 dark:hover:bg-gray-200 dark:active:bg-gray-500 hover:cursor-pointer w-full aspect-square rounded-xl flex items-center justify-center shadow" title={`Milton's ${sls[1].title}`}>
-            <StaticImage src={`../images/social-logos/tiktok.svg`} alt={`Milton's ${sls[1].title}`} className={sls[1].size} />
+          <a href={sls[1].href} target="_blank" rel="noopener noreferrer" className="bg-[#9999ff] hover:bg-[#bbbbff] dark:bg-gray-400 dark:hover:bg-gray-200 dark:active:bg-gray-500 hover:cursor-pointer w-full aspect-square rounded-xl flex items-center justify-center shadow" title={`Milton's ${sls[1].title}`}>
+            <StaticImage src={`../images/social-logos/github.svg`} alt={`Milton's ${sls[1].title}`} className={sls[1].size} />
           </a>
           <a href={sls[2].href} target="_blank" rel="noopener noreferrer" className="bg-[#9999ff] hover:bg-[#bbbbff] dark:bg-gray-400 dark:hover:bg-gray-200 dark:active:bg-gray-500 hover:cursor-pointer w-full aspect-square rounded-xl flex items-center justify-center shadow" title={`Milton's ${sls[2].title}`}>
             <StaticImage src={`../images/social-logos/x.svg`} alt={`Milton's ${sls[2].title}`} className={sls[2].size} />
@@ -68,10 +72,6 @@ const IndexPage: React.FC<PageProps> = () => {
             <StaticImage src={`../images/social-logos/nostr.svg`} alt={`Milton's ${sls[4].title}`} className={sls[4].size} />
           </a>
         </div>
-      </div>
-      <div className="flex flex-col justify-start gap-2 w-full">
-        <h2 className="text-xs font-bold text-zinc-900 dark:text-white">My portfolio</h2>
-        <PortfolioItems />
       </div>
     </Layout>
   )

@@ -51,9 +51,11 @@ const Layout = ({ colour = "bg-blue-600", children, onDarkMode = (s:boolean)=> {
         </div>
       </div>
       <div className="flex items-center justify-center mb-8">
+        <Link to="/" className={linkClass}>Home</Link>
         <Link to="/about" className={linkClass}>About</Link>
         <Link to="/linktree" className={linkClass}>Linktree</Link>
         <Link to="/contact" className={linkClass}>Contact</Link>
+        <Link to="/portfolio" className={linkClass}>Portfolio</Link>
       </div>
       <div className="flex justify-center">
         <div className="flex flex-col items-start justify-start min-h-screen px-5 py-10 gap-14 max-w-2xl">

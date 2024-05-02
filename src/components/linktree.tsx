@@ -4,10 +4,10 @@ import { StaticQuery, graphql } from 'gatsby'
 
 // type ItemNode = { readonly excerpt: string | null, readonly id: string, readonly frontmatter: { readonly date: string | null, readonly title: string | null } | null, readonly parent: { readonly modifiedTime: string } | {} | null }
 // type PortfolioItemsQuery = { readonly allMdx: { readonly nodes: ReadonlyArray<ItemNode> } };
-const PortfolioItems = () => (
+const Linktree = () => (
   <StaticQuery
     query={graphql`
-      query PortfolioItems {
+      query Linktree {
         allMdx(sort: {frontmatter: {date: DESC}}) {
           nodes {
             excerpt
@@ -25,11 +25,11 @@ const PortfolioItems = () => (
         }
       }
     `}
-    render={(data: Queries.PortfolioItemsQuery)  => {
+    render={(data: any)  => {
       return (
         <div className="grid grid-cols-3 gap-4">
           {
-            data.allMdx?.nodes?.map((node) => (
+            data.allMdx?.nodes?.map((node: any) => (
               <div className="relative group overflow-hidden rounded cursor-pointer" key={node.id} title={node.frontmatter?.title as string}>
                 <img src="https://placehold.co/150x100" alt="Portfolio Item" className="w-full" />
                 <div className="absolute bottom-0 w-full py-1 text-xs text-center font-bold text-[#000] dark:text-white group-hover:text-white dark:group-hover:text-[#000] bg-[#bbbbff] opacity-70 group-hover:bg-[#9999ff] group-hover:opacity-100 dark:bg-[#9999ff] dark:group-hover:bg-[#bbbbff] dark:opacity-100 dark:group-hover:opacity-70 transition duration-500">
@@ -47,7 +47,8 @@ const PortfolioItems = () => (
 )
 
 
-export default PortfolioItems
+export default Linktree;
+
 
 
 
