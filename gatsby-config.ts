@@ -29,6 +29,12 @@ const config: GatsbyConfig = {
       name: "portfolio",
       path: `${__dirname}/portfolio`
     }
+  }, {
+    resolve: "gatsby-source-filesystem",
+    options: {
+      name: "linktree",
+      path: `${__dirname}/linktree/`
+    }
   }]
 };
 
