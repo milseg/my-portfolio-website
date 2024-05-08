@@ -8,10 +8,29 @@ type LayoutProps = {
   onDarkMode?: (s:boolean)=> void;
 }
 
+const getCookie = (name: string) => {
+  const decodedCookie = decodeURIComponent(document.cookie);
+  const cookieParts = decodedCookie.split(';');
+
+  for (let i = 0; i < cookieParts.length; i++) {
+    const currentCookie = cookieParts[i].trim().split('=');
+    if (currentCookie[0] === name) {
+      return currentCookie[1];
+    }
+  }
+  return "";
+};
+
+const setCookie = (cookieName: string, cookieValue: string | number, exp: number = 24) => {
+  const expires = new Date();
+  expires.setTime(expires.getTime() + exp * 60 * 60 * 1000); // Set expiry to 1 day
+  document.cookie = `${cookieName}=${cookieValue}; expires=${expires.toUTCString()}; path=/`;
+};
 
 const Layout = ({ colour = "bg-blue-600", children, onDarkMode = (s:boolean)=> {} }: LayoutProps) => {
-  const [isDarkMode, setIsDarkMode] = React.useState<boolean>(true);
+  const [isDarkMode, setIsDarkMode] = React.useState<boolean>(getCookie('isDarkMode') === 'on');
   function toggle() {
+    setCookie('isDarkMode', isDarkMode ? 'off' : 'on')
     setIsDarkMode(!isDarkMode);
   }
 

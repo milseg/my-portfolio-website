@@ -6,7 +6,7 @@ const Linktree = () => (
   <StaticQuery
     query={graphql`
       query Linktree {
-        allFile(filter: {sourceInstanceName: {eq: "linktree"}}) {
+        allFile(filter: {relativePath: {regex: "/linktree.*/"}, sourceInstanceName: {eq: "images"}}) {
           edges {
             node {
               relativePath
@@ -24,10 +24,10 @@ const Linktree = () => (
       type igMapType = {[key: string]: igMapNode }
       let igMap:  igMapType = {}
       data.allFile.edges.forEach(({node}) => {
-        igMap[node.relativePath.replace(/\..*$/, '')] = node
+        igMap[node.relativePath.replace(/^.*\//, '').replace(/\..*$/, '')] = node
       })
       let lts = linkTreeData.map((el) => {
-        el.image = igMap[el.id]
+        el.image = igMap[el.imgKey]
         return el
       })
 
@@ -41,7 +41,7 @@ const Linktree = () => (
                 <div className="bg-[#9999ff] hover:bg-white dark:bg-white dark:hover:bg-transparent p-4 rounded-full shadow flex items-center w-[21.5rem] md:w-[40rem] cursor-pointer border-2 border-purple-800 dark:hover:border-white text-[#000] hover:text-purple-800 dark:text-purple-600 dark:hover:text-white" title={l.alt}>
                   <img src={ig.publicURL} alt={l.alt} className="mr-2 w-10 h-10" />
                   <div className="flex-1 ml-[-20px]">
-                    <a href={l.href} className="text-lg  font-bold flex items-center justify-center rounded-full px-4 py-2" target="_blank" rel="noopener noreferrer">
+                    <a href={l.href} className="text-lg font-bold flex items-center justify-center rounded-full px-4 py-2" target="_blank" rel="noopener noreferrer">
                       <span>{l.title}</span>
                     </a>
                   </div>
