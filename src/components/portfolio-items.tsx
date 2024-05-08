@@ -52,7 +52,7 @@ const PortfolioItems = () => (
             data.allMdx?.nodes?.map((node) => (
               <a href={node.frontmatter?.guru as string} className="relative group overflow-hidden rounded cursor-pointer" key={node.id} title={node.frontmatter?.title as string} target="_blank" rel="noopener noreferrer">
                 <img src={igMap[node.frontmatter?.cover as string]} alt="Portfolio Item" className="w-[150px] h-[100px]" />
-                <div className="absolute bottom-0 w-full py-1 text-xs text-center font-bold text-red-800 dark:text-white group-hover:text-white dark:group-hover:text-[#000] bg-[#bbbbff] opacity-70 group-hover:bg-[#9999ff] group-hover:opacity-100 dark:bg-[#9999ff] dark:group-hover:bg-[#bbbbff] dark:opacity-100 dark:group-hover:opacity-70 transition duration-500 h-10">
+                <div className="absolute bottom-0 w-full py-1 text-xs text-center font-bold text-red-800 dark:text-white group-hover:text-white dark:group-hover:text-[#000] bg-[#bbbbff] opacity-70 group-hover:bg-[#9999ff] group-hover:opacity-100 dark:bg-[#9999ff] dark:group-hover:bg-[#bbbbff] dark:opacity-100 dark:group-hover:opacity-70 transition duration-500 h-11">
                   <div className="flex flex-col justify-center items-center h-full pb-1">
                   {node.frontmatter?.title}
                   </div>
