@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
+import HamburguerMenu from './hamburguer-menu'
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -69,7 +70,8 @@ const Layout = ({ colour = "bg-blue-600", children, onDarkMode = (s:boolean)=> {
           )}
         </div>
       </div>
-      <div className="flex items-center justify-center mb-8">
+      <HamburguerMenu />
+      <div className="hidden md:flex items-center justify-center mb-8">
         <Link to="/" className={linkClass}>Home</Link>
         <Link to="/about" className={linkClass}>About</Link>
         <Link to="/linktree" className={linkClass}>Linktree</Link>

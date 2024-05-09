@@ -42,8 +42,8 @@ const IndexPage: React.FC<PageProps> = () => {
   ], []);
   return (
     <Layout>
-      <div className="flex flex-col items-center md:flex-row md:items-center md:justify-start">
-        <StaticImage src="../images/profile-pic-green-trees.jpg" alt="Milton" className="rounded-full mb-4 md:mr-4 w-[200px] h-[200px]" />
+      <div className="flex flex-col items-center md:flex-row md:items-center md:justify-start w-full">
+        <StaticImage src="../images/profile-pic-green-trees.jpg" alt="Milton" className="rounded-full mb-4 md:mr-4 w-[200px] h-[200px] z-0" />
         <div>
           <h1 className="text-4xl font-bold text-[#000] dark:text-zinc-300">Hey, I'm Milton.</h1>
           <p className="text-xl mb-6 dark:text-zinc-300">Full Stack Developer</p>

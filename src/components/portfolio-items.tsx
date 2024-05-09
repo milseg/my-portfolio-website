@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import { igMapNode } from '../../data/linktree'
 
 // type ItemNode = { readonly excerpt: string | null, readonly id: string, readonly frontmatter: { readonly date: string | null, readonly title: string | null } | null, readonly parent: { readonly modifiedTime: string } | {} | null }
 // type PortfolioItemsQuery = { readonly allMdx: { readonly nodes: ReadonlyArray<ItemNode> } };
