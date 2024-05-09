@@ -45,18 +45,28 @@ const PortfolioItems = () => (
         igMap[node.relativePath.replace(/^.*\//, '')] = node.publicURL as string
       })
 
+      const ellipsis = (s: string): string => {
+        if(s.length > 33) {
+          let ar = s.substr(0, 30)+'...'//.split(' ')
+          return ar
+          // ar.splice(ar.length-1, 1).join(' ')
+          // return ar.join(' ')+'...'
+        }
+        return s
+      }
+
       return (
         <div className="grid grid-cols-3 gap-4">
           {
             data.allMdx?.nodes?.map((node) => (
               <a href={node.frontmatter?.guru as string} className="relative group overflow-hidden rounded cursor-pointer" key={node.id} title={node.frontmatter?.title as string} target="_blank" rel="noopener noreferrer">
                 <img src={igMap[node.frontmatter?.cover as string]} alt="Portfolio Item" className="w-[150px] h-[100px]" />
-                <div className="absolute bottom-0 w-full py-1 text-xs text-center font-bold text-red-800 dark:text-white group-hover:text-white dark:group-hover:text-[#000] bg-[#bbbbff] opacity-70 group-hover:bg-[#9999ff] group-hover:opacity-100 dark:bg-[#9999ff] dark:group-hover:bg-[#bbbbff] dark:opacity-100 dark:group-hover:opacity-70 transition duration-500 h-11">
+                <div className="absolute bottom-0 w-full py-1 text-xs text-center font-bold text-white group-hover:text-red-800 bg-purple-800 group-hover:bg-[#bbbbff] group-hover:opacity-70 transition duration-500 h-12 md:h-11">
                   <div className="flex flex-col justify-center items-center h-full pb-1">
-                  {node.frontmatter?.title}
+                  {ellipsis(node.frontmatter?.title as string)}
                   </div>
                 </div>
-                <div className="absolute inset-0 border-4 border-transparent group-hover:border-[#9999ff] dark:group-hover:border-[#bbbbff] transition duration-500"></div>
+                <div className="absolute inset-0 border-4 border-purple-800 group-hover:border-[#9999ff] dark:group-hover:border-[#bbbbff] transition duration-500"></div>
               </a>
             ))
           }

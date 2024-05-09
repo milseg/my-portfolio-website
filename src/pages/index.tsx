@@ -49,7 +49,7 @@ const IndexPage: React.FC<PageProps> = () => {
           <p className="text-xl mb-6 dark:text-zinc-300">Full Stack Developer</p>
         </div>
       </div>
-      <div className="flex flex-col justify-start gap-2 w-full" id="portfolio">
+      <div className="flex flex-col justify-start gap-2 w-full mt-[-50px]" id="portfolio">
         <h2 className="text-xs font-bold text-zinc-900 dark:text-white">My portfolio</h2>
         <PortfolioItems />
       </div>
