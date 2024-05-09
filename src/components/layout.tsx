@@ -10,6 +10,10 @@ type LayoutProps = {
 }
 
 const getCookie = (name: string) => {
+  if(typeof document === 'undefined') {
+    return "on";
+  }
+
   const decodedCookie = decodeURIComponent(document.cookie);
   const cookieParts = decodedCookie.split(';');
 
@@ -23,6 +27,10 @@ const getCookie = (name: string) => {
 };
 
 const setCookie = (cookieName: string, cookieValue: string | number, exp: number = 24) => {
+  if(typeof document === 'undefined') {
+    return;
+  }
+
   const expires = new Date();
   expires.setTime(expires.getTime() + exp * 60 * 60 * 1000); // Set expiry to 1 day
   document.cookie = `${cookieName}=${cookieValue}; expires=${expires.toUTCString()}; path=/`;
