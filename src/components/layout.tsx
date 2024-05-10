@@ -11,7 +11,7 @@ type LayoutProps = {
 
 const getCookie = (name: string) => {
   if(typeof document === 'undefined') {
-    return "on";
+    return "";
   }
 
   const decodedCookie = decodeURIComponent(document.cookie);
@@ -37,7 +37,7 @@ const setCookie = (cookieName: string, cookieValue: string | number, exp: number
 };
 
 const Layout = ({ colour = "bg-blue-600", children, onDarkMode = (s:boolean)=> {} }: LayoutProps) => {
-  const [isDarkMode, setIsDarkMode] = React.useState<boolean>(getCookie('isDarkMode') === 'on');
+  const [isDarkMode, setIsDarkMode] = React.useState<boolean>(getCookie('isDarkMode') !== 'off');
   function toggle() {
     setCookie('isDarkMode', isDarkMode ? 'off' : 'on')
     setIsDarkMode(!isDarkMode);

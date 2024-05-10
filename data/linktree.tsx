@@ -5,7 +5,7 @@ type LinkTreeDataType = Array<{
   imgKey: string;
   title: string;
   alt: string;
-  image: igMapNode | null;
+  image: string | null;
 }>
 
 export let linkTreeData: LinkTreeDataType = [
