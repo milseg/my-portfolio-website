@@ -16,7 +16,7 @@ const AboutPage: React.FC<PageProps> = () => {
   return (
     <Layout>
       <div className="w-full flex flex-row items-start justify-center">
-        <div className="flex-col justify-start items-start w-[80%] mt-[-20px]">
+        <div className="flex-col justify-start items-start w-[95%] md:w-[80%] mt-[-20px]">
           <h1 className="text-4xl text-center w-full font-bold dark:text-zinc-300 pb-5 block md:hidden">About Me</h1>
           <h1 className="text-xl font-bold dark:text-zinc-300 pb-1">Tagline</h1>
           <p className="dark:text-zinc-300" style={pStyle}>Premier Client Satisfaction</p>
