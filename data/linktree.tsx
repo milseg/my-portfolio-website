@@ -59,7 +59,7 @@ export let linkTreeData: LinkTreeDataType = [
     alt: 'Aiboo Delivery App Store',
     image: null
   },{
-    href: 'https://t.me/milsegdev',
+    href: 'https://t.me/AdaAttendantBot',
     imgKey: 'telegram',
     title: 'My Telegram (contact me)',
     alt: 'Milton\'s Telegram',
